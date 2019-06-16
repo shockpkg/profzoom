@@ -209,6 +209,16 @@ matrix:
             - swftools
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+      deploy:
+        provider: releases
+        api_key:
+          secure: $GITHUB_API_KEY
+        file_glob: true
+        file:
+          - dist/*.tar.gz*
+        skip_cleanup: true
+        on:
+          tags: true
 
 before_install:
   - eval "${MATRIX_EVAL}"
@@ -240,14 +250,3 @@ script:
 
   - make dist-as3
   - make dist-archive
-
-deploy:
-  provider: releases
-  api_key:
-    secure: $GITHUB_API_KEY
-  file_glob: true
-  file:
-    - dist/*.tar.gz*
-  skip_cleanup: true
-  on:
-    tags: true
