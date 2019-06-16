@@ -11,6 +11,7 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-4.9
+            - gcc-multilib
             - libc6-dev-i386
             - linux-libc-dev:i386
             - swftools
@@ -24,6 +25,7 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-5
+            - gcc-multilib
             - libc6-dev-i386
             - linux-libc-dev:i386
             - swftools
@@ -37,6 +39,7 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-6
+            - gcc-multilib
             - libc6-dev-i386
             - linux-libc-dev:i386
             - swftools
@@ -50,6 +53,7 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-7
+            - gcc-multilib
             - libc6-dev-i386
             - linux-libc-dev:i386
             - swftools
@@ -63,6 +67,7 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-8
+            - gcc-multilib
             - libc6-dev-i386
             - linux-libc-dev:i386
             - swftools
@@ -77,6 +82,7 @@ matrix:
             - llvm-toolchain-precise-3.5
           packages:
             - clang-3.5
+            - gcc-multilib
             - libc6-dev-i386
             - linux-libc-dev:i386
             - swftools
@@ -91,6 +97,7 @@ matrix:
             - llvm-toolchain-precise-3.6
           packages:
             - clang-3.6
+            - gcc-multilib
             - libc6-dev-i386
             - linux-libc-dev:i386
             - swftools
@@ -105,6 +112,7 @@ matrix:
             - llvm-toolchain-precise-3.7
           packages:
             - clang-3.7
+            - gcc-multilib
             - libc6-dev-i386
             - linux-libc-dev:i386
             - swftools
@@ -119,6 +127,7 @@ matrix:
             - llvm-toolchain-precise-3.8
           packages:
             - clang-3.8
+            - gcc-multilib
             - libc6-dev-i386
             - linux-libc-dev:i386
             - swftools
@@ -132,6 +141,7 @@ matrix:
             - llvm-toolchain-trusty-3.9
           packages:
             - clang-3.9
+            - gcc-multilib
             - libc6-dev-i386
             - swftools
       env:
@@ -144,6 +154,7 @@ matrix:
             - llvm-toolchain-trusty-4.0
           packages:
             - clang-4.0
+            - gcc-multilib
             - libc6-dev-i386
             - linux-libc-dev:i386
             - swftools
@@ -157,6 +168,7 @@ matrix:
             - llvm-toolchain-trusty-5.0
           packages:
             - clang-5.0
+            - gcc-multilib
             - libc6-dev-i386
             - linux-libc-dev:i386
             - swftools
