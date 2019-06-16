@@ -47,7 +47,7 @@ void * read_pz_hook(
 	}
 
 	fseek(response, 0, SEEK_END);
-	long s = ftell(response);
+	size_t s = ftell(response);
 	fseek(response, 0, SEEK_SET);
 
 	void * r = (void *)malloc(s);
