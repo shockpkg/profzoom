@@ -12,6 +12,7 @@ matrix:
           packages:
             - g++-4.9
             - libc6-dev-i386
+            - linux-libc-dev:i386
             - swftools
       env:
          - MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"
@@ -24,6 +25,7 @@ matrix:
           packages:
             - g++-5
             - libc6-dev-i386
+            - linux-libc-dev:i386
             - swftools
       env:
          - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
@@ -36,6 +38,7 @@ matrix:
           packages:
             - g++-6
             - libc6-dev-i386
+            - linux-libc-dev:i386
             - swftools
       env:
         - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
@@ -48,6 +51,7 @@ matrix:
           packages:
             - g++-7
             - libc6-dev-i386
+            - linux-libc-dev:i386
             - swftools
       env:
         - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
@@ -60,6 +64,7 @@ matrix:
           packages:
             - g++-8
             - libc6-dev-i386
+            - linux-libc-dev:i386
             - swftools
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
@@ -73,6 +78,7 @@ matrix:
           packages:
             - clang-3.5
             - libc6-dev-i386
+            - linux-libc-dev:i386
             - swftools
       env:
         - MATRIX_EVAL="CC=clang-3.5 && CXX=clang++-3.5"
@@ -86,6 +92,7 @@ matrix:
           packages:
             - clang-3.6
             - libc6-dev-i386
+            - linux-libc-dev:i386
             - swftools
       env:
         - MATRIX_EVAL="CC=clang-3.6 && CXX=clang++-3.6"
@@ -99,6 +106,7 @@ matrix:
           packages:
             - clang-3.7
             - libc6-dev-i386
+            - linux-libc-dev:i386
             - swftools
       env:
         - MATRIX_EVAL="CC=clang-3.7 && CXX=clang++-3.7"
@@ -112,6 +120,7 @@ matrix:
           packages:
             - clang-3.8
             - libc6-dev-i386
+            - linux-libc-dev:i386
             - swftools
       env:
         - MATRIX_EVAL="CC=clang-3.8 && CXX=clang++-3.8"
@@ -136,6 +145,7 @@ matrix:
           packages:
             - clang-4.0
             - libc6-dev-i386
+            - linux-libc-dev:i386
             - swftools
       env:
         - MATRIX_EVAL="CC=clang-4.0 && CXX=clang++-4.0"
@@ -148,6 +158,7 @@ matrix:
           packages:
             - clang-5.0
             - libc6-dev-i386
+            - linux-libc-dev:i386
             - swftools
       env:
         - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
