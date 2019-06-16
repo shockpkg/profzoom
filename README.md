@@ -7,11 +7,13 @@ Superpowers for Linux Flash Projectors
 
 # Overview
 
-Gives native code powered functionality to Linux Flash Projectors via LD_PRELOAD.
+Gives native code powered functionality to Linux Flash Projectors.
 
 For other platforms, Adobe AIR can provide desktop apps with powerful desktop API's.
 
 AIR for Linux is long dead however, so this library can help fill in the gaps in the limitations of Linux Flash Projectors.
+
+Uses `LD_PRELOAD` to hook `fopen`/`fopen64` created by URL requests, run code, and make dynamic responses.
 
 Named after Professor Zoom, arch-nemesis to The Flash.
 
@@ -33,7 +35,7 @@ Compile it to a SWF, and then optionally into a projector.
 Copy the `profzoom.so` that matches the Flash Player architecture into the same directory as the player and SWF or the projector.
 
 
-## 3. Use a wrapper script to launch a stand-alone Flash Player or projector.
+## 3. Use a wrapper script to launch a stand-alone Flash Player or projector
 
 For use with player and SWF (good for debugging):
 
