@@ -156,4 +156,27 @@ before_install:
   - eval "${MATRIX_EVAL}"
 
 script:
-  - make
+  - DEBUG=1 CFLAGS='-m64' make
+  - ./bin/testunit.sh
+  - ./bin/testfake.sh
+  - make clean-bin
+
+  - DEBUG=1 CFLAGS='-m32' make
+  - ./bin/testunit.sh
+  - ./bin/testfake.sh
+  - make clean-bin
+
+  - DEBUG=0 CFLAGS='-m64' make
+  - ./bin/testunit.sh
+  - ./bin/testfake.sh
+  - make dist-x86_64
+  - make clean-bin
+
+  - DEBUG=0 CFLAGS='-m32' make
+  - ./bin/testunit.sh
+  - ./bin/testfake.sh
+  - make dist-i386
+  - make clean-bin
+
+  - make dist-as3
+  - ls -al dist
