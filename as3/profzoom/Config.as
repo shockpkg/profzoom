@@ -1,6 +1,11 @@
 package profzoom {
 	public class Config {
 		/**
+		 * Version number.
+		 */
+		public static const version: String = '1.0.0';
+
+		/**
 		 * Path prefix, defaults same as in the binary.
 		 */
 		public static var prefix: String = '/.profzoom/';
