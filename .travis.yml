@@ -207,4 +207,5 @@ script:
   - make clean-bin
 
   - make dist-as3
-  - ls -al dist
+  - make dist-archive
+  - find dist -exec file "{}" \;
