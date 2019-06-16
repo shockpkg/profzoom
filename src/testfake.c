@@ -17,6 +17,7 @@ void * read_pz_hook(
 	const char * encode,
 	size_t * size
 ) {
+	*size = 0;
 	FILE * response = fopen(encode, "rb");
 	if (!response) {
 		return NULL;
@@ -32,7 +33,10 @@ void * read_pz_hook(
 		return NULL;
 	}
 
-	fread(r, 1, s, response);
+	if (fread(r, 1, s, response) != s) {
+		fclose(response);
+		return NULL;
+	}
 	fclose(response);
 	*size = s;
 	return r;
