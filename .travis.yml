@@ -1,7 +1,5 @@
 language: c
 
-os: linux
-
 stages:
   - test
   - deploy
@@ -216,7 +214,7 @@ before_install:
   - eval "${MATRIX_EVAL}"
 
 script:
-  - find .
+  - make clean
 
   - DEBUG=1 CFLAGS='-m64' make
   - ./bin/testunit.sh
@@ -242,4 +240,14 @@ script:
 
   - make dist-as3
   - make dist-archive
-  - find dist -exec file "{}" \;
+
+deploy:
+  provider: releases
+  api_key:
+    secure: $GITHUB_API_KEY
+  file_glob: true
+  file:
+    - dist/*.tar.gz*
+  skip_cleanup: true
+  on:
+    tags: true
