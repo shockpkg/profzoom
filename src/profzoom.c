@@ -31,9 +31,9 @@ FILE * fopen(
 	}
 
 	// Otherwise continue to the next fopen.
-	FILE * (*_fopen)(const char*, const char*);
+	FILE * (* _fopen)(const char *, const char *);
 	*(void **) (&_fopen) = dlsym(RTLD_NEXT, "fopen");
-	return (*_fopen)(path, mode);
+	return (* _fopen)(path, mode);
 }
 
 FILE * fopen64(
@@ -47,7 +47,7 @@ FILE * fopen64(
 	}
 
 	// Otherwise continue to the next fopen64.
-	FILE * (*_fopen)(const char*, const char*);
+	FILE * (* _fopen)(const char *, const char *);
 	*(void **) (&_fopen) = dlsym(RTLD_NEXT, "fopen64");
-	return (*_fopen)(path, mode);
+	return (* _fopen)(path, mode);
 }
