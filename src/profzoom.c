@@ -20,8 +20,8 @@ const char * pz_prefix(void) {
 	return r;
 }
 
-FILE * pz_fopen(
-	const char * path,
+FILE * fopen(
+	const char * filename,
 	const char * mode
 ) {
 	// Check if the path is hooked.
@@ -36,24 +36,18 @@ FILE * pz_fopen(
 	return (*_fopen)(path, mode);
 }
 
-FILE * fopen(
-	const char * filename,
-	const char * mode
-) {
-	FILE * fp = pz_fopen(filename, mode);
-	if (fp) {
-		return fp;
-	}
-	return NULL;
-}
-
 FILE * fopen64(
 	const char * filename,
 	const char * mode
 ) {
-	FILE * fp = pz_fopen(filename, mode);
-	if (fp) {
-		return fp;
+	// Check if the path is hooked.
+	pz_cmd_response response = NULL;
+	if (pz_hook(pz_prefix(), path, mode, &response)) {
+		return response;
 	}
-	return NULL;
+
+	// Otherwise continue to the next fopen64.
+	FILE * (*_fopen)(const char*, const char*);
+	*(void **) (&_fopen) = dlsym(RTLD_NEXT, "fopen64");
+	return (*_fopen)(path, mode);
 }
