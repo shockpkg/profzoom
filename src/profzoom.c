@@ -26,14 +26,14 @@ FILE * fopen(
 ) {
 	// Check if the path is hooked.
 	pz_cmd_response response = NULL;
-	if (pz_hook(pz_prefix(), path, mode, &response)) {
+	if (pz_hook(pz_prefix(), filename, mode, &response)) {
 		return response;
 	}
 
 	// Otherwise continue to the next fopen.
 	FILE * (* _fopen)(const char *, const char *);
 	*(void **) (&_fopen) = dlsym(RTLD_NEXT, "fopen");
-	return (* _fopen)(path, mode);
+	return (* _fopen)(filename, mode);
 }
 
 FILE * fopen64(
@@ -42,12 +42,12 @@ FILE * fopen64(
 ) {
 	// Check if the path is hooked.
 	pz_cmd_response response = NULL;
-	if (pz_hook(pz_prefix(), path, mode, &response)) {
+	if (pz_hook(pz_prefix(), filename, mode, &response)) {
 		return response;
 	}
 
 	// Otherwise continue to the next fopen64.
 	FILE * (* _fopen)(const char *, const char *);
 	*(void **) (&_fopen) = dlsym(RTLD_NEXT, "fopen64");
-	return (* _fopen)(path, mode);
+	return (* _fopen)(filename, mode);
 }
