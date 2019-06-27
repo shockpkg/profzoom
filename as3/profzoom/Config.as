@@ -3,7 +3,7 @@ package profzoom {
 		/**
 		 * Version number.
 		 */
-		public static const version: String = '1.0.0';
+		public static const version: String = '1.0.1';
 
 		/**
 		 * Path prefix, defaults same as in the binary.
