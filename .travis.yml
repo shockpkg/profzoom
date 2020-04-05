@@ -8,6 +8,7 @@ matrix:
   include:
     - stage: test
       os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -24,6 +25,7 @@ matrix:
 
     - stage: test
       os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -40,6 +42,7 @@ matrix:
 
     - stage: test
       os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -56,6 +59,7 @@ matrix:
 
     - stage: test
       os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -72,6 +76,7 @@ matrix:
 
     - stage: test
       os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -88,6 +93,7 @@ matrix:
 
     - stage: test
       os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -104,6 +110,7 @@ matrix:
 
     - stage: test
       os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -120,6 +127,7 @@ matrix:
 
     - stage: test
       os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -136,6 +144,7 @@ matrix:
 
     - stage: test
       os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -152,6 +161,7 @@ matrix:
 
     - stage: test
       os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -166,6 +176,7 @@ matrix:
 
     - stage: test
       os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -181,6 +192,7 @@ matrix:
 
     - stage: test
       os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -196,6 +208,7 @@ matrix:
 
     - stage: deploy
       os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -211,8 +224,7 @@ matrix:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
       deploy:
         provider: releases
-        api_key:
-          secure: $GITHUB_API_KEY
+        api_key: $GITHUB_API_KEY
         file_glob: true
         file:
           - dist/*.tar.gz*
